@@ -1,6 +1,6 @@
 
 import { NativeModules } from 'react-native';
 
-const { RNVisibleScrollView } = NativeModules;
+const { FPReactNativeVisibleScrollview } = NativeModules;
 
-export default RNVisibleScrollView;
+export default FPReactNativeVisibleScrollview;

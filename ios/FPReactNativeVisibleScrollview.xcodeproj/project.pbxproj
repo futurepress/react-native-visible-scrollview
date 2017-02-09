@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B3E7B58A1CC2AC0600A0062D /* RCTScrollView+RNVisibleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RCTScrollView+RNVisibleScrollView.m */; };
+		331805F81E42BE7A00C44077 /* FPVisibleScrollViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 331805F41E42BE7A00C44077 /* FPVisibleScrollViewManager.m */; };
+		331805F91E42BE7A00C44077 /* FPVisibleScrollview.m in Sources */ = {isa = PBXBuildFile; fileRef = 331805F61E42BE7A00C44077 /* FPVisibleScrollview.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,9 +24,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		134814201AA4EA6300B7C361 /* libRNVisibleScrollView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNVisibleScrollView.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		B3E7B5881CC2AC0600A0062D /* RCTScrollView+RNVisibleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RCTScrollView+RNVisibleScrollView.h"; sourceTree = "<group>"; };
-		B3E7B5891CC2AC0600A0062D /* RCTScrollView+RNVisibleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RCTScrollView+RNVisibleScrollView.m"; sourceTree = "<group>"; };
+		134814201AA4EA6300B7C361 /* libFPReactNativeVisibleScrollview.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFPReactNativeVisibleScrollview.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		331805F41E42BE7A00C44077 /* FPVisibleScrollViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPVisibleScrollViewManager.m; sourceTree = "<group>"; };
+		331805F51E42BE7A00C44077 /* FPVisibleScrollViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPVisibleScrollViewManager.h; sourceTree = "<group>"; };
+		331805F61E42BE7A00C44077 /* FPVisibleScrollview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPVisibleScrollview.m; sourceTree = "<group>"; };
+		331805F71E42BE7A00C44077 /* FPVisibleScrollview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPVisibleScrollview.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,16 +45,26 @@
 		134814211AA4EA7D00B7C361 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				134814201AA4EA6300B7C361 /* libRNVisibleScrollView.a */,
+				134814201AA4EA6300B7C361 /* libFPReactNativeVisibleScrollview.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		331805F31E42BE3E00C44077 /* FPReactNativeVisibleScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				331805F41E42BE7A00C44077 /* FPVisibleScrollViewManager.m */,
+				331805F51E42BE7A00C44077 /* FPVisibleScrollViewManager.h */,
+				331805F61E42BE7A00C44077 /* FPVisibleScrollview.m */,
+				331805F71E42BE7A00C44077 /* FPVisibleScrollview.h */,
+			);
+			name = FPReactNativeVisibleScrollView;
 			sourceTree = "<group>";
 		};
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-				B3E7B5881CC2AC0600A0062D /* RCTScrollView+RNVisibleScrollView.h */,
-				B3E7B5891CC2AC0600A0062D /* RCTScrollView+RNVisibleScrollView.m */,
+				331805F31E42BE3E00C44077 /* FPReactNativeVisibleScrollView */,
 				134814211AA4EA7D00B7C361 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,9 +72,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		58B511DA1A9E6C8500147676 /* RNVisibleScrollView */ = {
+		58B511DA1A9E6C8500147676 /* FPReactNativeVisibleScrollview */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "RNVisibleScrollView" */;
+			buildConfigurationList = 58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "FPReactNativeVisibleScrollview" */;
 			buildPhases = (
 				58B511D71A9E6C8500147676 /* Sources */,
 				58B511D81A9E6C8500147676 /* Frameworks */,
@@ -71,9 +84,9 @@
 			);
 			dependencies = (
 			);
-			name = RNVisibleScrollView;
+			name = FPReactNativeVisibleScrollview;
 			productName = RCTDataManager;
-			productReference = 134814201AA4EA6300B7C361 /* libRNVisibleScrollView.a */;
+			productReference = 134814201AA4EA6300B7C361 /* libFPReactNativeVisibleScrollview.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -83,14 +96,14 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0610;
-				ORGANIZATIONNAME = Facebook;
+				ORGANIZATIONNAME = FuturePress;
 				TargetAttributes = {
 					58B511DA1A9E6C8500147676 = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
 				};
 			};
-			buildConfigurationList = 58B511D61A9E6C8500147676 /* Build configuration list for PBXProject "RNVisibleScrollView" */;
+			buildConfigurationList = 58B511D61A9E6C8500147676 /* Build configuration list for PBXProject "FPReactNativeVisibleScrollview" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -102,7 +115,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				58B511DA1A9E6C8500147676 /* RNVisibleScrollView */,
+				58B511DA1A9E6C8500147676 /* FPReactNativeVisibleScrollview */,
 			);
 		};
 /* End PBXProject section */
@@ -112,7 +125,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3E7B58A1CC2AC0600A0062D /* RCTScrollView+RNVisibleScrollView.m in Sources */,
+				331805F91E42BE7A00C44077 /* FPVisibleScrollview.m in Sources */,
+				331805F81E42BE7A00C44077 /* FPVisibleScrollViewManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,7 +218,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = RNVisibleScrollView;
+				PRODUCT_NAME = FPReactNativeVisibleScrollview;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -220,7 +234,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = RNVisibleScrollView;
+				PRODUCT_NAME = FPReactNativeVisibleScrollview;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -228,7 +242,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		58B511D61A9E6C8500147676 /* Build configuration list for PBXProject "RNVisibleScrollView" */ = {
+		58B511D61A9E6C8500147676 /* Build configuration list for PBXProject "FPReactNativeVisibleScrollview" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				58B511ED1A9E6C8500147676 /* Debug */,
@@ -237,7 +251,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "RNVisibleScrollView" */ = {
+		58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "FPReactNativeVisibleScrollview" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				58B511F01A9E6C8500147676 /* Debug */,
