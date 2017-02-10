@@ -27,7 +27,7 @@
 @implementation FPVisibleScrollView
 {
     NSMutableArray<NSValue *> *_cachedChildFrames;
-    
+
     // FP Added:
     UIView *_previousVisibleSubView;
     CGFloat _previousVisibleSubViewX;
@@ -36,9 +36,9 @@
 
 - (instancetype)initWithEventDispatcher:(RCTEventDispatcher *)eventDispatcher
 {
-    
+
     self = [super initWithEventDispatcher:eventDispatcher];
-    
+
     return self;
 }
 
@@ -62,7 +62,7 @@
 
          const CGFloat min = scrollsVertically ? subview.frame.origin.y : subview.frame.origin.x;
          const CGFloat max = min + (scrollsVertically ? subview.frame.size.height : subview.frame.size.width);
-         
+
          if (subview.frame.size.width > 0 &&
              subview.frame.size.height > 0 &&
              max >= visibleMin && min < visibleMax) {
@@ -126,13 +126,13 @@
   NSArray<NSNumber *> *visible = [self visibleChildFrames];
   NSUInteger subViewId;
 
-    NSLog(@"visible now is %i", visible.count);
+    // NSLog(@"visible now is %i", visible.count);
     if (visible.count > 0) {
       subViewId = [visible[visible.count-1] intValue];
       UIView *subView;
 
       subView = [self.contentView reactSubviews][subViewId];
-      
+
 
       // if the position of the first visible subview changed, offset to counter the change and return
       // to the previous position
@@ -140,7 +140,7 @@
 
           newOffset.x = newOffset.x + (_previousVisibleSubView.frame.origin.x - _previousVisibleSubViewX);
 
-          NSLog(@"countered to %f", newOffset.x );
+          // NSLog(@"countered to %f", newOffset.x );
 
           _previousVisibleSubViewX = _previousVisibleSubView.frame.origin.x;
 
@@ -152,7 +152,7 @@
 
       } else {
           // otherwise reset the previous subview
-          NSLog(@"reset to %i", subView);
+          // NSLog(@"reset to %i", subView);
           _previousVisibleSubView = subView;
           _previousVisibleSubViewX = subView.frame.origin.x;
           _previousVisibleSubViewY = subView.frame.origin.y;
@@ -164,68 +164,4 @@
   return newOffset;
 }
 
-/*
-- (NSArray<NSDictionary *> *)calculateChildFramesData
-{
-    NSMutableArray<NSDictionary *> *updatedChildFrames = [NSMutableArray new];
-    [[self.contentView reactSubviews] enumerateObjectsUsingBlock:
-     ^(UIView *subview, NSUInteger idx, __unused BOOL *stop) {
-         
-         // Check if new or changed
-         CGRect newFrame = subview.frame;
-         
-         CGFloat changedWidth = 0;
-         
-         CGPoint contentOffset = self.scrollView.contentOffset;
-         
-         int indexValue = [self->_cachedChildFrames indexOfObject:subview];
-         NSLog(@"new index: %i, old index: %i", idx, indexValue);
-         
-         //NSLog(@"Changed width of %i to %f", idx, changedWidth);
-         if (indexValue != NSNotFound) {
-            CGRect oldFrame = [self->_cachedChildFrames[indexValue] CGRectValue];
-            changedWidth = newFrame.size.width - oldFrame.size.width;
-             NSLog(@": %i changedWidth to %f", idx, changedWidth);
-         } else {
-            changedWidth = newFrame.size.width;
-             NSLog(@": %i changedWidth default to %f", idx, changedWidth);
-         }
-         
-         if(newFrame.origin.x <= contentOffset.x && changedWidth > 0) {
-             CGPoint offset = CGPointMake(contentOffset.x + changedWidth, 0);
-             NSLog(@"Scrolling to %f", offset.x);
-             //[self scrollToOffset:offset animated:NO];
-         }
-         
-         
-         BOOL frameChanged = NO;
-         if (self->_cachedChildFrames.count <= idx) {
-             frameChanged = YES;
-//             changedWidth = newFrame.size.width;
-             [self->_cachedChildFrames addObject:[NSValue valueWithCGRect:newFrame]];
-         } else if (!CGRectEqualToRect(newFrame, [self->_cachedChildFrames[idx] CGRectValue])) {
-             frameChanged = YES;
-//             CGRect oldFrame = [self->_cachedChildFrames[idx] CGRectValue];
-//             changedWidth = newFrame.size.width - oldFrame.size.width;
-             self->_cachedChildFrames[idx] = [NSValue valueWithCGRect:newFrame];
-         }
-         
-         // Create JS frame object
-         if (frameChanged) {
-             
-             [updatedChildFrames addObject: @{
-                                              @"index": @(idx),
-                                              @"x": @(newFrame.origin.x),
-                                              @"y": @(newFrame.origin.y),
-                                              @"width": @(newFrame.size.width),
-                                              @"height": @(newFrame.size.height),
-                                              }];
-         }
-     }];
-    
-    return updatedChildFrames;
-}
-*/
-
 @end
-
