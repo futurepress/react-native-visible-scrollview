@@ -3,11 +3,11 @@
 
 ## Getting started
 
-`$ npm install react-native-visible-scroll-view --save`
+`$ npm install react-native-visible-scroll-iew --save`
 
 ### Mostly automatic installation
 
-`$ react-native link react-native-visible-scroll-view`
+`$ react-native link react-native-visible-scrollview`
 
 ### Manual installation
 
