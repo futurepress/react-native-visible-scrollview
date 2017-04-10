@@ -51,7 +51,7 @@ public class FPVisibleScrollView extends ReactScrollView implements ReactClippin
 
   private int counterX = 0;
   private int counterY = 0;
-  
+
   public FPVisibleScrollView(ReactContext context) {
     this(context, null);
   }
