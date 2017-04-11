@@ -126,7 +126,17 @@
   NSArray<NSNumber *> *visible = [self visibleChildFrames];
   NSUInteger subViewId;
 
-    // NSLog(@"visible now is %i", visible.count);
+    if (_previousVisibleSubView != NULL && [[self.contentView reactSubviews] containsObject:_previousVisibleSubView] == 0) {
+        // Clear a previous subview that no long exists
+        _previousVisibleSubView =  NULL;
+        _previousVisibleSubViewX = 0;
+        _previousVisibleSubViewY = 0;
+
+    }
+
+     //NSLog(@"visible now is %i, subviews %i", visible.count, [self.contentView reactSubviews].count);
+    //NSLog(@"current %f, previous %f", _previousVisibleSubView.frame.origin.x,  _previousVisibleSubViewX);
+
     if (visible.count > 0) {
       subViewId = [visible[visible.count-1] intValue];
       UIView *subView;
@@ -140,7 +150,7 @@
 
           newOffset.x = newOffset.x + (_previousVisibleSubView.frame.origin.x - _previousVisibleSubViewX);
 
-          // NSLog(@"countered to %f", newOffset.x );
+           //NSLog(@"countered to %f", newOffset.x );
 
           _previousVisibleSubViewX = _previousVisibleSubView.frame.origin.x;
 
@@ -158,7 +168,15 @@
           _previousVisibleSubViewY = subView.frame.origin.y;
 
       }
-  }
+    } else {
+        // reset
+        if ([self.contentView reactSubviews].count == 1) {
+            UIView *subView = [self.contentView reactSubviews][0];
+            _previousVisibleSubView = subView;
+            _previousVisibleSubViewX = subView.frame.origin.x;
+            _previousVisibleSubViewY = subView.frame.origin.y;
+        }
+    }
 
   // all other cases, offset doesn't change
   return newOffset;
