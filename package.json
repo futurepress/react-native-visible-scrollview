@@ -1,7 +1,7 @@
 
 {
   "name": "react-native-visible-scrollview",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "repository": "https://github.com/futurepress/react-native-visible-scrollview",
   "description": "A ScrollView the maintains the current visible item.",
   "main": "visible-scrollview",
