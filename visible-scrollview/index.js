@@ -31,7 +31,7 @@ const dismissKeyboard = require('react-native/Libraries/Utilities/dismissKeyboar
 const flattenStyle = require('react-native/Libraries/StyleSheet/flattenStyle');
 const invariant = require('fbjs/lib/invariant');
 const processDecelerationRate = require('react-native/Libraries/Components/ScrollView/processDecelerationRate');
-const PropTypes = React.PropTypes;
+const PropTypes = require('prop-types');
 const requireNativeComponent = require('react-native/Libraries/ReactNative/requireNativeComponent');
 
 class VisibleScrollView extends ScrollView {
